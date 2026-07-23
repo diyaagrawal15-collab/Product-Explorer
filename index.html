@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+ <head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <title>Product Explorer</title>
+ <script src="https://cdn.tailwindcss.com"></script>
+ </head>
+ <body>
+<!-- 1. Navbar -->
+ <nav class="bg-white shadow sticky top-0 z-10">
+ <div
+ class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between"
+ >
+ <h1 class="text-xl font-bold text-indigo-600">🛍️Product Explorer</h1>
+ <span class="text-sm text-gray-500">Powered by Fake Store API</span>
+ </div>
+ </nav>
+
+<!-- 2. Search Box -->
+ <div class="max-w-6xl mx-auto px-4 py-6 flex flex-col sm:flex-row gap-3">
+ <input
+ id="searchInput"
+ type="text"
+ placeholder="🔎Search Products..."
+ class="flex-1 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+ />
+ <select
+ id="categorySelect"
+ class="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+ >
+ <option value="all">All Categories</option>
+ </select>
+ </div>
+
+<!-- Loading spinner -->
+ <div id="loadingSpinner" class="flex justify-center py-10">
+ <div
+ class="w-10 h-10 border-4 border-indigo-500 border-t-transparent rounded-full animate-spin"
+ ></div>
+ </div>
+
+<!-- product grid -->
+ <div
+ id="productGrid"
+ class="max-w-6xl mx-auto px-4 pb-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+ ></div>
+
+<!-- Error State -->
+ <div id="emptyState" class="hidden text-center text-gray-300 py-10"></div>
+
+<!--Product Model-->
+ <div
+ id="productModel"
+ class="hidden fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-20"
+ >
+ <div class="bg-white rounded-xl max-w-md w-full p-6 relaive">
+ <button id="closeModelBtn">❎</button>
+<!-- js show product detail -->
+ <div id="modelContent"></div>
+ </div>
+ </div>
+
+ <script src="script.js"></script>
+ </body>
+</html>
